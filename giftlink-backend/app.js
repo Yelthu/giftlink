@@ -9,12 +9,12 @@ const {loadData} = require("./util/import-mongo/index");
 const giftRoutes = require('./routes/giftRoutes');
 const searchRoutes = require('./routes/searchRoutes');
 
-app.use('/api/gifts', giftRoutes);
-app.use('/api/search', searchRoutes);
-
 const app = express();
 app.use("*",cors());
 const port = 3060;
+
+app.use('/api/gifts', giftRoutes);
+app.use('/api/search', searchRoutes);
 
 // Connect to MongoDB; we just do this one time
 connectToDatabase().then(() => {
