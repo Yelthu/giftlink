@@ -7,8 +7,10 @@ const pinoLogger = require('./logger');
 const connectToDatabase = require('./models/db');
 const {loadData} = require("./util/import-mongo/index");
 const giftRoutes = require('./routes/giftRoutes');
+const searchRoutes = require('./routes/searchRoutes');
 
 app.use('/api/gifts', giftRoutes);
+app.use('/api/search', searchRoutes);
 
 const app = express();
 app.use("*",cors());
